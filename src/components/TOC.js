@@ -8,14 +8,17 @@ class TOC extends Component {
     while (i < data.length) {
       list.push(
         <li key={data[i].id}>
-          <a href={'/comment/' + data[i].link}>{data[i].content}</a>
+          <a href={'/comment/' + data[i].id}
+            data-id={data[i].id}
+            onClick={this.props.pageChange}>
+            {data[i].title}
+          </a>
         </li>);
       i += 1;
     }
-    console.log(list)
+    console.log('Toc');
     return (
       <nav>
-        <h2>{this.props.title}</h2>
         <ul>
           {list}
         </ul>
