@@ -7,7 +7,7 @@ class TOC extends Component {
     let i = 0;
     while (i < data.length) {
       list.push(
-        <li key={data[i].id}>
+        <li className='main-item' key={data[i].id}>
           <a href={'/comment/' + data[i].id}
             data-id={data[i].id}
             onClick={this.props.pageChange}>
@@ -18,8 +18,8 @@ class TOC extends Component {
     }
     console.log('Toc');
     return (
-      <nav>
-        <ul>
+      <nav className='main'>
+        <ul className="main-list">
           {list}
         </ul>
       </nav>

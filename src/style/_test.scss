@@ -1,0 +1,28 @@
+#root {
+  border: 1px solid black;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.18);
+}
+
+.main {
+  &-list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &-item {
+    width: 100%;
+    background-color: antiquewhite;
+    color: rgb(53, 53, 53);
+    border-radius: 4px;
+    a {
+      display: block;
+      font-size: 20px;
+
+      &:hover {
+        opacity: 0.4;
+      }
+    }
+  }
+}
