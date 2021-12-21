@@ -5,6 +5,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  $font-main: 'Noto Sans KR', sans-serif;
+  $font-price: 'Tahoma', sans-serif;
+}
+
 body {
   $font-main: 'Noto Sans KR', sans-serif;
   $font-price: 'Tahoma', sans-serif;

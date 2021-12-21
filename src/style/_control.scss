@@ -1,0 +1,27 @@
+.control {
+  
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    border-bottom: 1px solid black;
+  }
+
+  li {
+    padding: 10px;
+
+    a, button {
+      height: 21px;
+      font-size: 16px;
+      display: block;
+      color: blue;
+    }
+
+    button {
+      border: 0;
+      line-height: 1.5;
+      background-color: transparent;
+    }
+  }
+
+}

@@ -13,7 +13,7 @@ class Control extends Component {
 
     return (
       // ※ 하나의 최상위 태그만 사용해야 한다.
-      <div>
+      <div className="control">
         <ul>
           <li><a href="/create" data-name="create" onClick={ this.onChange }>create</a></li>
           <li><a href="/update" data-name="update" onClick={ this.onChange }>update</a></li>
