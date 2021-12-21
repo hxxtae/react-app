@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 class CreateContent extends Component {
 
   onSubmit = (e) => {
-    const title = e.target.title.value;
-    const desc = e.target.desc.value;
+    const title = e.target.title.value; // name="title"
+    const desc = e.target.desc.value;   // name="desc"
     this.props.onSubmit(title, desc);
     e.preventDefault();
   };
