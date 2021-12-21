@@ -7,7 +7,7 @@ class App extends Component {
     super(props);
     this.state = {
       mode: 'welcome',
-      selected_content_id: 0,
+      selected_content_id: '',
       subject: { title: "WEB", sub: "World Wide Web!" },
       welcome: { title: 'Welcome', desc: 'Hello, React!!'},
       toc: [
@@ -32,8 +32,11 @@ class App extends Component {
     } else if (this.state.mode === 'create') {
       _article = <CreateContent onSubmit={this.onCreateSubmit}></CreateContent>;
     } else if (this.state.mode === 'update') {
-      _data = this.state.toc[this.state.selected_content_id];
-      _article = <UpdateContent data={_data} onSubmit={this.onUpdateSubmit} ></UpdateContent>;
+      const selectId = this.state.selected_content_id;
+      if (selectId !== '') {
+        _data = this.state.toc[selectId];
+        _article = <UpdateContent data={_data} onSubmit={this.onUpdateSubmit} ></UpdateContent>;
+      }
     }
     return _article;
   }
@@ -50,7 +53,20 @@ class App extends Component {
   };
 
   onChangeMode = (name) => {
-    this.setState({ mode: name });
+    if (name !== 'delete') {
+      this.setState({ mode: name });
+    } else {
+      const selectId = +this.state.selected_content_id;
+      if (selectId !== '') {
+        const toc = [...this.state.toc];
+        const newToc = toc.filter(item => item.id !== (selectId + 1));
+        console.log(newToc);
+        this.setState({
+          mode: "welcome",
+          toc: newToc
+        });
+      }
+    }
   };
 
   onCreateSubmit = (title, desc) => {
