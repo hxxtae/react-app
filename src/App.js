@@ -4,7 +4,7 @@ import './App.css';
 
 class App extends Component {
   constructor(props) {
-    super(props);
+    super(props); // props 초기화
     this.state = {
       mode: 'welcome',
       selected_content_id: '',
@@ -96,7 +96,7 @@ class App extends Component {
         id: id + 1,
         title,
         desc
-      }
+      };
       this.setState({
         mode: "read",
         selected_content_id: selectId,
@@ -141,11 +141,11 @@ export default App;
   ※ props 와 state 의 차이점 : 데이터 전달의 차이
     상위 컴포넌트가 하위 컴포넌트로 데이터를 전달 할 때에는 props로 전달 하지만,
     하위 컴포넌트가 상위 컴포넌트로 데이터를 전달 할 때에는 props는 ReadOnly 이므로 props 로 전달 하는 것이 아니라
-    상위 컴포넌트의 (state & 선언영역) 안에 이벤트를 심고 그 안에 setState로 값을 전달한다(바꾼다).
+    상위 컴포넌트의 (state & 선언영역) 함수 안에 setState 를 구현하면, 하위 컴포넌트에서 이벤트를 심고 해당 함수를 호출하여 값을 전달한다.(바꾼다)
 
   ※ 요약하자면
     props는 상위 컴포넌트에서 하위 컴포넌트로 데이터 전달 가능
-    state는 하위 컴포넌트에서 상위 컴포넌트로 데이터 전달 가능 (상위 state 나 함수선언 에 이벤트를 심어서 가능 - setState())
+    state는 하위 컴포넌트에서 상위 컴포넌트로 데이터 전달 가능 (상위 컴포넌트 함수를, 하위 컴포넌트 이벤트에 심어서 전달 - setState())
 
   [Lesson.2]
   - state, props의 값이 바뀌면 render를 다시 호출한다. -> 화면이 다시 그려진다.
