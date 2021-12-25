@@ -56,13 +56,14 @@ class App extends Component {
     if (name !== 'delete') {
       this.setState({ mode: name });
     } else {
-      const selectId = +this.state.selected_content_id;
+      const selectId = this.state.selected_content_id;
       if (selectId !== '') {
         const toc = [...this.state.toc];
-        const newToc = toc.filter(item => item.id !== (selectId + 1));
+        const newToc = toc.filter(item => item.id !== (+selectId + 1));
         console.log(newToc);
         this.setState({
           mode: "welcome",
+          selected_content_id: '',
           toc: newToc
         });
       }
